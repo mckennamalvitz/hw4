@@ -12,6 +12,13 @@
             <h4><%= entry["occurred_on"] %></h4>
             <p><%= entry["description"] %></p>
           </div>
+        <% if entry.uploaded_image.attached? %>
+        <%# use url_for(post.uploaded_image) as attached file's url %>
+          <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
+        <% else %>
+        <%# otherwise display original image url from database column %>
+          <img src="<%= entry["image"] %>" class="img-fluid">
+        <% end %>
         </div>
       </div>
     <% end %>
