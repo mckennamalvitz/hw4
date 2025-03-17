@@ -1,8 +1,7 @@
 class EntriesController < ApplicationController
 
   def index
-    @place = Place.find(params[:place_id])  # Find the place
-    @entries = Entry.where(user_id: session["user_id"], place_id: @place.id)  # Fetch the user's entries for this place
+    @entries = Entry.where({"user_id" => session["user_id"] })
   end
 
   def new
