@@ -1,4 +1,4 @@
-<h1>Places</h1>
+<h1>The Places Journal</h1>
 
 
 <% if User.find_by({ "id" => session["user_id"] }) != nil %>
@@ -14,6 +14,9 @@
   </p>
 
 <% else %>
-  You need to login
+  This website helps you keep track of all the places you and your friends have visited while allowing you to create personalized journal entries for each location. Your entries will be private and visible only to you, so you can document your experiences, memories, and thoughts freely.
+  <p>
+  <p>
+  Please log in to continue to The Places Journal and start capturing your adventures!
 
 <% end %>
