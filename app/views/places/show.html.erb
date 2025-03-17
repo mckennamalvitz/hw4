@@ -1,7 +1,6 @@
 <h1><%= @place["name"] %></h1>
 
 <h2>My Entries</h2>
-
 <% if User.find_by({ "id" => session["user_id"] }) != nil %>
   <div class="row">
     <% for entry in @entries %>

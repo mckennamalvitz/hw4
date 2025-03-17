@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
   
   def new
+    @user = User.find_by({ "id" => params["id"] })
   end
 
   def create
     if User.find_by({ "email" => params["email"] }) == nil
       @user = User.new
-      @user["first_name"] = params["first_name"]
+      #@user["first_name"] = params["first_name"]
       #@user["last_name"] = params["last_name"]
       @user["username"] = params["username"]
       @user["email"] = params["email"]

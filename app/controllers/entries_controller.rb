@@ -8,7 +8,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    if User.find_by({ "id" => session["user_id"] }) != nil
+  #  if User.find_by({ "id" => session["user_id"] }) != nil
       @entry = Entry.new     
       @entry["title"] = params["title"]
       @entry["description"] = params["description"]
@@ -17,7 +17,7 @@ class EntriesController < ApplicationController
       @entry.uploaded_image.attach(params["uploaded_image"])
       @entry["user_id"] = session["user_id"] 
       @entry.save
-    end 
+  # end 
 
     redirect_to "/places/#{@entry["place_id"]}"
   end
